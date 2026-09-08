@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Inicio
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h1>Bienvenido a Mi App Flask</h1>
+
+    <p>
+        Esta es la página de inicio de nuestra microaplicación web
+        desarrollada con Flask.
+    </p>
+
+    <p>
+        En esta aplicación puedes conocer nuestro proyecto y
+        utilizar el formulario de contacto.
+    </p>
+
+    <a class="button" href="{{ url_for('contact') }}">
+        Ir a Contacto
+    </a>
+
+</div>
+
+{% endblock %}

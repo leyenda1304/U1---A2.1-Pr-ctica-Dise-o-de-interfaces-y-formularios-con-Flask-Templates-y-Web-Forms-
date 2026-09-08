@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contacto
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h1>Formulario de Contacto</h1>
+
+    <p>
+        Completa los siguientes campos para enviarnos un mensaje.
+    </p>
+
+    <form method="POST">
+
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.name.label }}
+
+            {{ form.name(
+                class="form-control",
+                placeholder="Escribe tu nombre"
+            ) }}
+
+            {% for error in form.name.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+
+        <div class="form-group">
+            {{ form.email.label }}
+
+            {{ form.email(
+                class="form-control",
+                placeholder="ejemplo@correo.com"
+            ) }}
+
+            {% for error in form.email.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+
+        <div class="form-group">
+            {{ form.message.label }}
+
+            {{ form.message(
+                class="form-control",
+                rows="5",
+                placeholder="Escribe tu mensaje"
+            ) }}
+
+            {% for error in form.message.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+
+        <div class="form-group">
+            {{ form.submit(class="button") }}
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
